@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Music Shop</string>
+    <string-array name="spinner">
+        <item>Balalaika</item>
+        <item>Drum</item>
+        <item>Piano</item>
+    </string-array>
+
+</resources>
