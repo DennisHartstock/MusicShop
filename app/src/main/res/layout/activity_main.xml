@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="8dp"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/music_shop" />
 
@@ -40,14 +40,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:entries="@array/spinner"
         android:minHeight="48dp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/spinnerImageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:scaleType="centerInside"
         android:layout_weight="1"
         app:srcCompat="@drawable/balalaika" />
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/priceTextView"
             android:layout_marginStart="65dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:text="0" />
 
         <TextView
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginEnd="85dp"
             android:text="Quantity"
             android:textSize="16sp" />
 
@@ -94,6 +94,7 @@
             android:layout_below="@id/quantityTextView"
             android:layout_margin="8dp"
             android:layout_toStartOf="@id/quantityValue"
+            android:onClick="degreaseQuantity"
             android:text="-" />
 
         <TextView
@@ -101,7 +102,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/quantityTextView"
-            android:layout_margin="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
             android:layout_toStartOf="@id/incrementButton"
             android:text="0" />
 
