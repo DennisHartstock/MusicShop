@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,6 +26,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        createSpinner();
+
+        createGoodsMap();
+    }
+
+    private void createGoodsMap() {
+        goodsMap = new HashMap<>();
+        goodsMap.put("Balalaika", 10.00);
+        goodsMap.put("Drum", 20.00);
+        goodsMap.put("Piano", 30.00);
+    }
+
+    private void createSpinner() {
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
 
@@ -36,11 +51,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spinnerArrayList);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
-
-        goodsMap = new HashMap<>();
-        goodsMap.put("Balalaika", 10.00);
-        goodsMap.put("Drum", 20.00);
-        goodsMap.put("Piano", 30.00);
     }
 
     public void increaseQuantity(View view) {
@@ -48,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         TextView quantityValue = findViewById(R.id.quantityValue);
         quantityValue.setText(String.valueOf(quantity));
         TextView priceValueTextView = findViewById(R.id.priceValueTextView);
-        priceValueTextView.setText(String.format("%s€", price * quantity));
+        priceValueTextView.setText(String.format("%s €", price * quantity));
     }
 
     public void degreaseQuantity(View view) {
@@ -57,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         TextView quantityValue = findViewById(R.id.quantityValue);
         quantityValue.setText(String.valueOf(quantity));
         TextView priceValueTextView = findViewById(R.id.priceValueTextView);
-        priceValueTextView.setText(String.format("%s€", price * quantity));
+        priceValueTextView.setText(String.format("%s €", price * quantity));
     }
 
     @Override
@@ -65,7 +75,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         goodsName = spinner.getSelectedItem().toString();
         price = goodsMap.get(goodsName);
         TextView priceValueTextView = findViewById(R.id.priceValueTextView);
-        priceValueTextView.setText(String.format("%s€", price * quantity));
+        priceValueTextView.setText(String.format("%s €", price * quantity));
+
+        ImageView spinnerImageView = findViewById(R.id.spinnerImageView);
+
+        switch (goodsName) {
+            case "Balalaika":
+                spinnerImageView.setImageResource(R.drawable.balalaika);
+                break;
+            case "Drum":
+                spinnerImageView.setImageResource(R.drawable.drum);
+                break;
+            case "Piano":
+                spinnerImageView.setImageResource(R.drawable.piano);
+                break;
+        }
     }
 
     @Override
