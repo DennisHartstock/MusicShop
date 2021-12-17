@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#C34C4D</color>
-    <color name="accent">#F3D559</color>
-    <color name="secondary">#F7F7F7</color>
+    <color name="primary">#FE0000</color>
+    <color name="primaryVariant">#FC8800</color>
+    <color name="onPrimary">#FFCD00</color>
+    <color name="secondary">#FFB300</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
